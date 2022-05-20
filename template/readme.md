@@ -1,4 +1,4 @@
-## Everything I know about templates in Go.
+## Everything I Know About Go \[Template\].
 
 Go developers use templates to automate the generation of static documents.
 
