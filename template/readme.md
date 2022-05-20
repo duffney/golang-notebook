@@ -1,4 +1,4 @@
-## Everything I Know About Go \[Template\].
+## Everything I Know About Go \[[template](https://pkg.go.dev/text/template)\].
 
 Go developers use templates to automate the generation of static documents.
 
