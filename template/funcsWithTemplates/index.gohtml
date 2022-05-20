@@ -6,7 +6,14 @@
 <body>
 
 <h1>Everything I Know About Go</h1>
+
+<!--Uses predefined global fucntion 'if', when no value is passed in the paragraph tag is skipped-->
+{{if .}} 
+
 <p>My first {{makeUpperCase .}}.</p> 
+
+{{end}} 
+<!-- Read more about, https://pkg.go.dev/text/template#hdr-Functions -->
 
 </body>
 </html>

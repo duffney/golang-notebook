@@ -7,15 +7,22 @@ import (
 	"text/template"
 )
 
-func upperCase(s string) string {
-	upperString := strings.ToUpper(s)
-	return upperString
+type user struct {
+	name    string
+	twitter string
+	admin   bool
 }
 
 var funcMap = template.FuncMap{
 	"makeUpperCase": upperCase,
 }
+
 var tpl *template.Template
+
+func upperCase(s string) string {
+	upperString := strings.ToUpper(s)
+	return upperString
+}
 
 func init() {
 	// the funcMap needs to be declared before the template is parsed
@@ -28,5 +35,4 @@ func main() {
 	if err != nil {
 		log.Fatalln(err)
 	}
-	// Use pre-defined global functions https://pkg.go.dev/text/template#hdr-Functions
 }
