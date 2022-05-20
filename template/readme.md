@@ -9,4 +9,4 @@ Using Go's `text/template` and `html/template` packages you can pass data to tem
 
 <!-- YouTube video here -->
 
-Source: I learned all I know about Go templates from Todd McLeod's Udemy course [Web Development with Go](https://www.udemy.com/course/go-programming-language).
+> Source: I learned all I know about Go templates from Todd McLeod's Udemy course [Web Development with Go](https://www.udemy.com/course/go-programming-language).
