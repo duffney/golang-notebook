@@ -1,1 +1,1 @@
-# Everything I Know About Go
+![Everything I know About Go](/images/everything-i-know-about-go.png)
