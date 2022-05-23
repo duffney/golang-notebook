@@ -12,4 +12,5 @@ Start learning about Go templates, here's a [quick example](https://github.com/D
 
 ---
 
+
 > Source: I learned all I know about Go templates from Todd McLeod's Udemy course [Web Development with Go](https://www.udemy.com/course/go-programming-language).
