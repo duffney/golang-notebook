@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<form method="POST" enctype="multipart/form-data">
+    <label for="idx-f">Choose File To Upload</label>
+    <input type="file" id="idx-f" name="q">
+    <br>
+    <input type="submit">
+</form>
+
+{{if .}}
+<h1>Here are the contents of the file:</h1>
+{{.}}
+{{end}}
+</body>
+</html>
