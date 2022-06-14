@@ -35,6 +35,10 @@ func index(w http.ResponseWriter, req *http.Request) {
 }
 
 func signup(w http.ResponseWriter, req *http.Request) {
+	if alreadyLoggedIn(req) {
+		http.Redirect(w, req, "/", http.StatusSeeOther)
+		return
+	}
 
 	if req.Method == http.MethodPost {
 		u := req.FormValue("username")
@@ -84,4 +88,14 @@ func getUser(req *http.Request) user {
 		u = users[un]
 	}
 	return u
+}
+
+func alreadyLoggedIn(req *http.Request) bool {
+	c, err := req.Cookie("session")
+	if err != nil {
+		return false
+	}
+	un := sessions[c.Value]
+	_, ok := users[un]
+	return ok
 }
