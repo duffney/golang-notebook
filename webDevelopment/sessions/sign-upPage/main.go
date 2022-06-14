@@ -7,11 +7,13 @@ import (
 	"os/exec"
 	"strings"
 	"text/template"
+
+	"golang.org/x/crypto/bcrypt"
 )
 
 type user struct {
 	UserName string
-	Password string
+	Password []byte
 }
 
 var tpl *template.Template
@@ -63,7 +65,8 @@ func signup(w http.ResponseWriter, req *http.Request) {
 		sessions[cookie.Value] = u
 
 		// add user to users database
-		newUser := user{u, p}
+		bs, err := bcrypt.GenerateFromPassword([]byte(p), bcrypt.MinCost)
+		newUser := user{u, bs}
 		users[u] = newUser
 
 		// redirect to index
