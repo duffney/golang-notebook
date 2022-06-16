@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Page Title</title>
+</head>
+<body>
+
+<h1>Login</h1>
+
+<p>Welcome, to the login page</p>
+
+<form method="post">
+  <input type="text" name="username" value="test@email.com">
+  <input type="password" name="password" value="P@ssw0rd">
+  <input type="submit">
+</form>
+
+{{range .}}
+<p>Test users info:</p>
+<li>username == {{.UserName}}</li>
+<li>password == {{.Password}}</li>
+{{end}}
+
+</body>
+</html>

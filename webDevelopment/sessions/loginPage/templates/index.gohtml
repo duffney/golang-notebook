@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Page Title</title>
+</head>
+<body>
+
+<h1>Index</h1>
+
+<p>Welcome, to the index page</p>
+
+<h2>LoggedIn == {{.}}</h2>
+
+<p>Click <a href="/login">here</a> to login</p>
+
+
+{{if .UserName}}
+User ({{.UserName}}) signed in.
+{{end}}
+
+</body>
+</html>
