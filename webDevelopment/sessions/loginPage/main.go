@@ -6,11 +6,17 @@ import (
 	"net/http"
 	"os/exec"
 	"strings"
+	"time"
 )
 
 type user struct {
 	UserName string
 	Password string //See sign-upPage for encrypted pwd example
+}
+
+type session struct {
+	UserName     string
+	lastActivity time.Time
 }
 
 var tpl *template.Template
@@ -25,12 +31,21 @@ func init() {
 func main() {
 	http.HandleFunc("/", index)
 	http.HandleFunc("/login", login)
+	http.HandleFunc("/logout", logout)
 	http.Handle("/favicon/ico", http.NotFoundHandler())
 	http.ListenAndServe(":8080", nil)
 }
 
 func index(w http.ResponseWriter, req *http.Request) {
-	tpl.ExecuteTemplate(w, "index.gohtml", alreadyLoggedIn(req))
+	var u user
+	cookie, err := req.Cookie("session")
+	if err != nil {
+		fmt.Println("no session cookie")
+	} else {
+		u = users["test@email.com"]
+		fmt.Println(cookie.Value)
+	}
+	tpl.ExecuteTemplate(w, "index.gohtml", u)
 }
 
 func login(w http.ResponseWriter, req *http.Request) {
@@ -77,4 +92,19 @@ func alreadyLoggedIn(req *http.Request) bool {
 	un := sessions[c.Value]
 	_, ok := users[un]
 	return ok
+}
+
+func logout(w http.ResponseWriter, req *http.Request) {
+	c, _ := req.Cookie("session")
+	// delete the session
+	delete(sessions, c.Value)
+	// remove the cookie
+	c = &http.Cookie{
+		Name:   "session",
+		Value:  "",
+		MaxAge: -1,
+	}
+	http.SetCookie(w, c)
+
+	http.Redirect(w, req, "/login", http.StatusSeeOther)
 }

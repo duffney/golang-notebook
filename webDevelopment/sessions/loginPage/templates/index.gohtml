@@ -9,13 +9,11 @@
 
 <p>Welcome, to the index page</p>
 
-<h2>LoggedIn == {{.}}</h2>
-
-<p>Click <a href="/login">here</a> to login</p>
-
-
 {{if .UserName}}
-User ({{.UserName}}) signed in.
+<h2> Hey, {{.UserName}}!</h2>
+<p>Click <a href="/logout">here</a> to logout</p>
+{{else}}
+<p>Click <a href="/login">here</a> to login</p>
 {{end}}
 
 </body>
