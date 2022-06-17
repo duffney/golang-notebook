@@ -2,65 +2,42 @@ package main
 
 import (
 	"fmt"
-	"html/template"
 	"net/http"
 	"os/exec"
 	"strings"
-	"time"
+	"text/template"
 )
 
 type user struct {
 	UserName string
-	Password string //See sign-upPage for encrypted pwd example
-}
-
-type session struct {
-	UserName     string
-	lastActivity time.Time
+	Password string
+	Role     string
 }
 
 var tpl *template.Template
 var users = map[string]user{}
-var sessions = map[string]session{}
-var sessionsCleaned time.Time
-
-const sessionLength int = 10
+var sessions = map[string]string{}
 
 func init() {
 	tpl = template.Must(template.ParseGlob("templates/*"))
-	users["test@email.com"] = user{"test@email.com", "P@ssw0rd"}
-	sessionsCleaned = time.Now()
+	users["admin@email.com"] = user{"admin@email.com", "P@ssw0rd", "admin"}
+	users["user@email.com"] = user{"user@email.com", "P@ssw0rd", "user"}
 }
 
 func main() {
 	http.HandleFunc("/", index)
 	http.HandleFunc("/login", login)
 	http.HandleFunc("/logout", logout)
-	http.Handle("/favicon/ico", http.NotFoundHandler())
+	http.HandleFunc("/admin", admin)
+	http.Handle("/favicon.ico", http.NotFoundHandler())
 	http.ListenAndServe(":8080", nil)
 }
 
 func index(w http.ResponseWriter, req *http.Request) {
-	var u user
-	cookie, err := req.Cookie("session")
-	if err != nil {
-		fmt.Println("no session cookie")
-	} else {
-		u = users["test@email.com"]
-		fmt.Println(cookie.Value)
-	}
-	tpl.ExecuteTemplate(w, "index.gohtml", u)
-	cleanSessions()
+	tpl.ExecuteTemplate(w, "index.gohtml", nil)
 }
 
 func login(w http.ResponseWriter, req *http.Request) {
-
-	// already logged in?
-	if alreadyLoggedIn(req) {
-		http.Redirect(w, req, "/", http.StatusSeeOther)
-		return
-	}
-
 	if req.Method == http.MethodPost {
 		un := req.FormValue("username")
 		p := req.FormValue("password")
@@ -74,30 +51,28 @@ func login(w http.ResponseWriter, req *http.Request) {
 			http.Error(w, "Username and/or password do not match", http.StatusForbidden)
 			return
 		}
-
 		// create session
 		sessionUUID, _ := exec.Command("uuidgen").Output()
 		cookie := &http.Cookie{
 			Name:  "session",
 			Value: strings.TrimSuffix(string(sessionUUID), "\n"),
 		}
-		cookie.MaxAge = sessionLength
 		http.SetCookie(w, cookie)
-		sessions[cookie.Value] = session{un, time.Now()}
+		sessions[cookie.Value] = un
 		fmt.Println(sessions)
 		http.Redirect(w, req, "/", http.StatusSeeOther)
 	}
-	tpl.ExecuteTemplate(w, "login.gohtml", users)
+	tpl.ExecuteTemplate(w, "login.gohtml", nil)
 }
 
-func alreadyLoggedIn(req *http.Request) bool {
-	c, err := req.Cookie("session")
-	if err != nil {
-		return false
+func admin(w http.ResponseWriter, req *http.Request) {
+	u := getUser(w, req)
+	fmt.Println(u)
+	if u.Role != "admin" {
+		http.Error(w, "You must be an admin to access this page", http.StatusForbidden)
+		return
 	}
-	un := sessions[c.Value]
-	_, ok := users[un.UserName]
-	return ok
+	tpl.ExecuteTemplate(w, "paywall.gohtml", nil)
 }
 
 func logout(w http.ResponseWriter, req *http.Request) {
@@ -115,11 +90,23 @@ func logout(w http.ResponseWriter, req *http.Request) {
 	http.Redirect(w, req, "/login", http.StatusSeeOther)
 }
 
-func cleanSessions() {
-	for k, v := range sessions {
-		if time.Now().Sub(v.lastActivity) > (time.Second * 30) {
-			delete(sessions, k)
+func getUser(w http.ResponseWriter, req *http.Request) user {
+	// get cookie
+	c, err := req.Cookie("session")
+	if err != nil {
+		sessionUUID, _ := exec.Command("uuidgen").Output()
+		c = &http.Cookie{
+			Name:  "session",
+			Value: strings.TrimSuffix(string(sessionUUID), "\n"),
 		}
+
 	}
-	sessionsCleaned = time.Now()
+	http.SetCookie(w, c)
+
+	// if the user exists already, get user
+	var u user
+	if un, ok := sessions[c.Value]; ok {
+		u = users[un]
+	}
+	return u
 }
