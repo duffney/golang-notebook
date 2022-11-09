@@ -9,7 +9,7 @@ Start-here
 Dive deeper
 - [Go in Action, Second Edition](https://www.manning.com/books/go-in-action-second-edition)
 
-Trun Pro
+Turn Pro
 - [Ultimate Go](https://www.ardanlabs.com/training/ultimate-go/advanced-concepts/)
 
 Dabble in Web development
