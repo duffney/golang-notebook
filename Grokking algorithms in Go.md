@@ -7,6 +7,12 @@
 
 ## Recursion
 
+Key terms:
+- base case
+- recursive case
+- call stack
+
+Algorithms:
 - [Factioral Recursion](https://play.golang.com/p/Ta9vPb-SC0N)
 - [Count items in a slice (recursion)](https://go.dev/play/p/BcpvpAq1MKP)
 - [Find maximum number (recursion)](https://go.dev/play/p/KLy0MyZ9K5W)
@@ -15,6 +21,12 @@
 
 ## Quicksort
 
+Key terms:
+- Divide & Conquer
+- Pivot
+- Partitioning
+
+Algorithms:
 - [Quicksort divide and conquer](https://go.dev/play/p/Cx7Mq9svxTa)
 
 
