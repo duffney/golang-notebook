@@ -11,7 +11,12 @@ Dive deeper
 
 Turn Pro
 - [Ultimate Go](https://www.ardanlabs.com/training/ultimate-go/advanced-concepts/)
+- [The Power of Go: Advanced Software Engineering in Go](https://bitfieldconsulting.com/books/tools)
 
 Dabble in Web development
 - [Web Development w/ Google’s Go (golang) Programming Language](https://www.udemy.com/course/go-programming-language/)
 - [Let's Go!](https://lets-go.alexedwards.net/#packages)
+
+
+Cool clips about Golang:
+- [Best Programming Language | John Carmack and Lex Fridman]https://youtu.be/RfWGJS7rckk?t=322
