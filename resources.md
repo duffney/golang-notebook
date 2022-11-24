@@ -20,3 +20,4 @@ Dabble in Web development
 
 Cool clips about Golang:
 - [Best Programming Language | John Carmack and Lex Fridman]https://youtu.be/RfWGJS7rckk?t=322
+- ["The two twins of doom" Go and Rust](https://youtu.be/H9jMs-Lcyhc?t=479)
