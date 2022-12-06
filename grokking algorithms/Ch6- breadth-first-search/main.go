@@ -1,5 +1,4 @@
-// You can edit this code!
-// Click here and start typing.
+// Credit: Grokking Algorithms: An illustrated guide for programmers and other curious people
 package main
 
 import "fmt"
@@ -16,21 +15,27 @@ func main() {
 	graph["thom"] = []string{}
 	graph["jonny"] = []string{}
 
-	// create a queue
-	var queue []string
-	queue = graph["you"]
-
-	// breath-first search algorithm
-	i := 0
-	for i > len(queue) {
-		queue = dequeue(queue)
-		if 
-	}
+	fmt.Println(breathFirstSearch(graph))
 }
 
-func breathFirstSearch(g map[string][]string) {
+func breathFirstSearch(graph map[string][]string) string {
+	// create a queue
+	var queue []string
+	var person string
+	queue = graph["you"]
 
-	fmt.Println(g)
+	i := 0
+	for i < len(queue) { // while loop
+		person, queue = dequeue(queue)
+		if isSalesman(person) {
+			return person
+		} else {
+			for _, contact := range graph[person] {
+				queue = enqueue(queue, contact)
+			}
+		}
+	}
+	return ""
 }
 
 func isSalesman(p string) bool {
@@ -47,6 +52,6 @@ func enqueue(queue []string, element string) []string {
 	return queue
 }
 
-func dequeue(queue []string) []string {
-	return queue[1:]
+func dequeue(queue []string) (string, []string) {
+	return queue[0], queue[1:]
 }

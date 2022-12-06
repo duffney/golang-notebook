@@ -1,4 +1,4 @@
-// Quicksort
+// Quicksort (divide and conquer)
 package main
 
 import "fmt"

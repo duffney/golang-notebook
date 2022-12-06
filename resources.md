@@ -1,6 +1,6 @@
 # Recommended Golang Resources
 
-Start-here
+Start-here (pick just 1)
 - [Introducing Go](https://www.oreilly.com/library/view/introducing-go/9781491941997/)
 - [Learn How To Code: Google's Go (golang) Programming Language](https://www.udemy.com/course/learn-how-to-code/)
 - [Exercism Go language track](https://exercism.org/tracks/go)
@@ -19,5 +19,12 @@ Dabble in Web development
 
 
 Cool clips about Golang:
-- [Best Programming Language | John Carmack and Lex Fridman]https://youtu.be/RfWGJS7rckk?t=322
+- [Best Programming Language | John Carmack and Lex Fridman](https://youtu.be/RfWGJS7rckk?t=322)
 - ["The two twins of doom" Go and Rust](https://youtu.be/H9jMs-Lcyhc?t=479)
+
+Articles worth reading:
+- [The Best Go framework: no framework?](https://threedots.tech/post/best-go-framework/)
+
+quotes:
+
+> "Go suffers no fools" - Todd McLeod
