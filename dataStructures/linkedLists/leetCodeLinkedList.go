@@ -28,6 +28,6 @@ func NewLinkedList(val int, others ...int) *ListNode {
 }
 
 func main() {
-	list := NewLinkedList(1, 2, 3)
+	list := NewLinkedList(1, 2, 4)
 	fmt.Println(list.toArray())
 }
