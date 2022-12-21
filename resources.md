@@ -28,3 +28,5 @@ Articles worth reading:
 quotes:
 
 > "Go suffers no fools" - Todd McLeod
+
+https://dave.cheney.net/practical-go/presentations/qcon-china.html#_introduction
