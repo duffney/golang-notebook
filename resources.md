@@ -17,6 +17,8 @@ Dabble in Web development
 - [Web Development w/ Google’s Go (golang) Programming Language](https://www.udemy.com/course/go-programming-language/)
 - [Let's Go!](https://lets-go.alexedwards.net/#packages)
 
+Reference docs:
+- https://go.dev/doc/effective_go
 
 Cool clips about Golang:
 - [Best Programming Language | John Carmack and Lex Fridman](https://youtu.be/RfWGJS7rckk?t=322)
@@ -28,5 +30,3 @@ Articles worth reading:
 quotes:
 
 > "Go suffers no fools" - Todd McLeod
-
-https://dave.cheney.net/practical-go/presentations/qcon-china.html#_introduction
