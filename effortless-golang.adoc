@@ -7,10 +7,9 @@ Version 0.0.1, 2023-06-13
 :icons: font
 :toc: right
 :toclevels: 2
-:ch1: ./chapter-01
 ifndef::ebook-format[:leveloffset: 1]
 
-include::{ch1}/before-you-begin.adoc{}
+include::chapter-01.adoc[]
 
 include::chapter-02.adoc[]
 

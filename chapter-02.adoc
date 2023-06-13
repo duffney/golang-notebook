@@ -1,0 +1,2 @@
+[#chapter-02]
+== Setting up your Go environment
