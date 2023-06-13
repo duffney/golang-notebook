@@ -1,0 +1,31 @@
+= Effortless Golang: subtitle-goes-here 
+Joshua Duffney
+Version 0.0.1, 2023-06-13
+:front-cover-image: image::effortless-go-cover.png[fit=cover]
+:doctype: book
+:imagesdir: images
+:icons: font
+:toc: right
+:toclevels: 2
+:ch1: ./chapter-01
+ifndef::ebook-format[:leveloffset: 1]
+
+include::{ch1}/before-you-begin.adoc{}
+
+include::chapter-02.adoc[]
+
+include::chapter-03.adoc[]
+
+include::chapter-04.adoc[]
+
+include::chapter-05.adoc[]
+
+include::chapter-06.adoc[]
+
+include::chapter-07.adoc[]
+
+include::chapter-08.adoc[]
+
+include::chapter-09.adoc[]
+
+include::chapter-10.adoc[]
