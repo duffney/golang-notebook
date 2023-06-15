@@ -1,2 +1,67 @@
 [#chapter-01/before-you-begin]
 == Before you begin 
+
+Go was created by geniuses! In the late 2000s Google was experiencing significant challegnes in maintaining and scaling their vast software systems, but where at the time primarily build using C++ and Java. Frustrated by the complexity and enefficiencies of exising programming languages, a team of visionary engineers lead by four lengends in computer science (Robert Griesember, Rob Pike, and Ken Tompson) set out on a mission to create a new language.
+
+The seeds of Golang were planted in 2007, with the inital discussions and brainstorming sessions among the team members. Early on the team identified three key principals that would shape the language forever; simplicity, efficeiency, and concurrency. The team aimed to create a language that was easy to read, easy to write, provided fast compliation, efficient execution, and made concurrent programming as straightforward as possible.
+
+For people new to programming, Go is an excellent choice due to its simplicity. The creators of Go, who were experienced engineers facing challenges with maintaining and scaling Google's software systems, aimed to develop a language that addressed the shortcomings of existing programming languages. With simplicity, efficiency, and concurrency as their guiding principles, they successfully created Go. The language's clean and expressive syntax, combined with its fast compilation and efficient execution, quickly attracted developers. Moreover, Go's built-in support for concurrent programming made it even more appealing. In recent years, Go has climbed the ranks in popularity, becoming the 8th most popular programming language according to the Stack Overflow developer survey. While it may not have reached the same level of popularity as Python, JavaScript, and C, Go has carved out a niche for itself, particularly in the cloud-native space. With its dominance in cloud infrastructure and widespread usage in technologies like containers, Kubernetes, and Terraform, Go offers a unique opportunity for individuals in roles such as operators, sysadmins, DevOps engineers, and SREs to leverage their existing domain knowledge and transition into the world of software engineering.
+
+After years of dedicated effort, Golang was officically anounced to the public in November of 2009, with the release of version 1.0 in March of 2012. The language quickly gained traction due to its clean and expressive syntax, execellent performance, and built-in support for concurrent programming. Over the years Golangs popularity has continued to grow as more developers recongize its strenghts and embrace a pgramatic approach to software development. 
+
+In the decade since its release, golang has continued to climb the stackfoverflow's developer survey. Starting in 2013 it ranked 13th and in 2022 it was ranked 8th for most popular programming language. But equally important is it's rank on the Top paying technologies chart, which it current sits at 8th place as well. While Golang hasn't made it to the sample popularity as Python, JavaScript, and C it has found a niche area for itself. 
+
+// cut this section and focus on choosing golang because of it's simplicity and usefulness as your first language
+
+Within the small small world that is cloud infrastructure (Joking, it's a HUGE space) Golang dominates. A term often used to describe the space that Go inhabits is called Cloud-native. Cloud-native refers to the approach to designing, developing, and deploying applicatins that takes full advantage of cloud computering principcals and servies. Think containers, kubernetes, and terraform. Which, as a matter of fact, are all written in Go.
+
+Golang's adoption within the cloud native space presents a unique opporutnity for those who have been sitting on the other side of the technology stack. Operator, sysadmins, devops enginers, and SREs all have the opporutnity to take their exsitng domain of knowledge with them as they transition into the world of software engineering.
+
+// go is a great language for your first offical programming language.
+
+// revise transition
+
+// go suffers no fools
+// simple language
+// suffers no foolers
+
+=== Walking the stack
+
+My interest in technology started like many other kids growing up in the late 90s early 2000s, video games.
+
+After graduating high school I dream of becoming a video game designer like millions of other kids, but the sticker shock of the six figure student I had lump on my sholders to accomplsih that dream quickly detoured me for a traditional four-year program. Instead, I chose to attend a community college with a focus on computer networking. I enjoyed my time in my two year program and thought that working on computers even if it wasn't coding video games was a solid choice.
+
+Shortly after graduating with my associates I started working on the help desk. And just to date myself the company was working on a migration from XP to Windows 7. From there, I landed a job as a network administrator for a small bank, but I was really what you'd call a jack of all trades or a one man shop. I racked servers, ran netoworking cables, and setup a XenApp farm (totally a real thing). After that I got hired on as Tier 2 support for a large enterprise and stumbled upon a fablous scripting language called PowerShell! Learning PowerShell put my career on the fast track by jumping on what Jeffery Snover calls and "industry transition".
+
+That industry transition was the DevOps movement which took me all the way to an SRE at Stack Overflow and then Microsoft shortly after.
+
+When I look back on my nearly 15 year career in technology what I've actually done is "walk the stack". A stack or more accuratlly a "tech stack" is a compination of layers and components that make up an appliaction, but taken more broadly I'm using the term to describe the various disciplines withint he tech industry. Starting on the help desk I got exposure to operating system and appliactions. Moving into the network admin role gave me the oppoturnity to learn about infrastructure and for the last few years I've been making that final pivot into software engineering, which put me in a very unique spot. 
+
+I felt a bit like Goldylocks as I started learning my first "real" programming language, Golang. I'm not a total beginner, but I'm also not a recent Computer Science grade who's been grinding it out for 6-8 months on Leetcode to pass the coding interviews. And I'm also not a seasoned programmer who's just picking up a new language even though I had been coding for 7 years writing infrastructure automation. All this is to say, it was difficult to find the right resources that matched my needs as a learner. Some were too easy, some were to difficult or overwhelming.
+
+So, to get the knowledge I needed I had to read too many books, watch hundres of hours of online content, and take a ridicilous amount of notes. All of which, I hope to spare you from having to do. 
+
+
+=== Is this book for you?
+
+Who is my ideal reader? That's single question causes a lot of authors, myself included, a lot of anguish. Many books on writing and coches say to invision a single person you're writing for. Because if you don't you'll try and write a book for everyone and therefore make it a book for no one. My solution to this problem is simple, I'm writing this book for myself:
+
+[source, python]
+----
+previous_roles:
+  - devop engineer
+  - sre
+  - sysadmin
+experience:
+  - scripting languages
+lack_of_experience:
+  - programming
+  - computer science
+desired_role: software engineer
+----
+
+By describing myself I hope that I've been able to desribe you. As Don Jones, a mentor of mine, always says "THere's always someone right behind you." My hope is that your that person and that I can help you 
+
+By putting all of the knowledge I've collected over the last two years down on paper I hope to accomplish two things; distill and soldify my understanding of the Go programming language and gie you the reader a short, concise, and easy to understand book that teaches you the fundamentals of the Go programming language (Golang) without starting from zero experience in the industry while also understand that you might not have a CS background. 
+
+// short single 2-3 sentence paragraph
