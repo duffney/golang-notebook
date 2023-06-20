@@ -46,7 +46,7 @@ So, to get the knowledge I needed I had to read too many books, watch hundres of
 
 Who is my ideal reader? That's single question causes a lot of authors, myself included, a lot of anguish. Many books on writing and coches say to invision a single person you're writing for. Because if you don't you'll try and write a book for everyone and therefore make it a book for no one. My solution to this problem is simple, I'm writing this book for myself:
 
-[source, python]
+[source, yml]
 ----
 previous_roles:
   - devop engineer
