@@ -28,6 +28,7 @@ Building CLIs
 
 > This is the outline from the book proposal I never sent. But if I had to start over learning Go, this is how I'd go about it.
 
+```yaml
 1.	Before you begin
     1.1.	Who should read this book.
     1.2.	Go as your first programming language.
@@ -136,3 +137,4 @@ Building CLIs
     13.4.	Writing unit tests to validate code.
     13.5.	Testing your API
     13.6.	Testing your CLI app
+```
