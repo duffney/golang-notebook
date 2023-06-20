@@ -2,7 +2,9 @@
 
 <a href=""><img src="./effortless-golang-cover.png" alt="Effortless Golang" height="256px" align="right"></a>
 
-I considered writing a book about Go, but decided not to. Instead I've compiled a list of curated resources to make learning the language as effortless as possible. Hince the name "Effortless Go".
+I considered writing a book about Go, but decided not to. 
+
+Instead I've compiled a list of curated resources to make learning the language as effortless as possible. Hince the name "Effortless Go".
 
 You can **Follow** me on Twitter [@joshduffney](https://twitter.com/joshduffney).
 
