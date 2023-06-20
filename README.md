@@ -8,8 +8,6 @@ Instead I've compiled a list of curated resources to make learning the language 
 
 You can **Follow** me on Twitter [@joshduffney](https://twitter.com/joshduffney).
 
-If I were to start over, I'd read these books in this order:
-
 Learn the Language Fundamentals
 - [Introducing Go](https://www.oreilly.com/library/view/introducing-go/9781491941997/) by Caleb Doxsey
 - [Go in Action](https://www.manning.com/books/go-in-action-second-edition) by William Kennedy, Brian Ketelsen, and Erik St.Martin
